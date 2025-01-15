@@ -1,2 +1,2 @@
-const menuItemsByClass = element.querySelectorAll(".item");
+const menuItemsByClass = document.querySelectorAll(".item");
 console.log(menuItemsByClass);
