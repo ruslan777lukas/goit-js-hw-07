@@ -26,12 +26,14 @@ const images = [
 ];
 
 const ulElement = document.querySelector('.gallery');
-for (let imageRow of images){
-  ulElement.innerHTML += '<li><img class="one"/></li>';
-  const rowLi = ulElement.lastChild;
-  const one= rowLi.querySelector(".one")
-  one.setAttribute("src", imageRow.url);
-  one.setAttribute("alt", imageRow.alt);
+const massLi=[];
+for (let i=0; i<6; i++){
+  const stringLi = document.createElement('li');
+  stringLi.insertAdjacentHTML('afterBegin', '<img class="one"/>');
+  const one= stringLi.querySelector(".one")
+  one.setAttribute("src", images[i].url);
+  one.setAttribute("alt", images[i].alt);
+  massLi.push(stringLi);
 }
-
-
+ulElement.append(...massLi);
+console.log(ulElement);
