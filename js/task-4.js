@@ -8,14 +8,16 @@ function dataBase(event) {
  
     if (email === "" || password === "") {
         alert ("All form fields must be filled in");
+    } else {
+        const dataValid = {
+            "email" : email,
+            "password": password,
+        }
+        console.log(dataValid);
+        form.reset();
     }
 
-    const dataValid = {
-        "email" : email,
-        "password": password,
-    }
-    console.log(dataValid);
-    form.reset();
+    
 
 }
 registerForm.addEventListener('submit', dataBase)
